@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.land-all { 
+    width: 100%;
+    height: 90vh;
+    padding-bottom: 30px;
+    background-image: url('https://images.pexels.com/photos/7130546/pexels-photo-7130546.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.back{
+    background-color:rgba(47, 24, 147, 0.4 );
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+
+    
+}
+.land-title {
+    font-size: 60px;
+    color: white;
+    font-weight: 700;
+    width: 70vw;
+    
+    
+
+}
+.land-desc {
+    color: white;
+    margin-top: 40px;
+    font-size: 25px;
+    width: 70vw;
+}
+.text-value {
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    padding-top: 15vw;
+    text-align: left;
+
+}
+.buttons-land{
+    width: 65vw;
+    margin-left: 130px;
+    margin-top: 40px;
+    text-align: left;
+}
+.buttons-land > button:nth-child(2) {
+    background-color: #25DAC5;
+    color:white;
+    border: none;
+}
+.button-land { 
+    height: 40px;
+    width: 110px;
+    border-radius: 20px;
+    border:solid 1px transparent;
+    background-color: white;
+    margin-left: 20px;
+    color: #482BE7;
+    font-size: 15px;
+    font-weight: 700;
+}
+@media screen  and (max-width: 770px){
+    .land-all { 
+        width: 100%;
+        height: 100vh;
+        background-image: url('https://images.pexels.com/photos/3913025/pexels-photo-3913025.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+    .back{
+        background-color:rgba(47, 24, 147, 0.6);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .text-value {
+        margin-left: 15vw;
+        display: flex;
+        flex-direction: column;
+        width: 70vw;
+        padding-top: 100px;
+        text-align: left;
+    
+    }
+    .buttons-land{
+        text-align: left;
+        width: 70vw;
+        margin-top: 40px;
+    }
+    
+}
