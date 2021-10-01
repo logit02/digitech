@@ -1,10 +1,11 @@
 .collabs {
+    margin-top: 70px;
     height: 40vh;
     background-color: white;
 }
 
 .collabs > p {
-    padding-top: 20px;
+    padding-top: 30px;
     color:#151439;
     opacity: 0.4;
     font-size: 15px;

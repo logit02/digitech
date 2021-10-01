@@ -5,6 +5,9 @@ const mongoose =require('mongoose')
 dotenv.config();
 app.use(express.json());
 
+//Routes
+const postRoute = require('./routes/posts')
+
 mongoose.connect(process.env.MONGO_URL,  { 
     useNewUrlParser: true,
     useUnifiedTopology: true,

@@ -9,6 +9,7 @@ import Contact from './Components/Contact/contact'
 import Collabs from './Components/Collabs/collabs'
 import Footer from './Components/Footer/footer'
 import Signin from './Components/Signin/signin'
+
 //= imports from react
 import {useState, useContext, useLocation} from 'react'
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
@@ -55,6 +56,7 @@ function App() {
         <Route path='/signin'>
               <Signin />
         </Route>
+       
         <Redirect from ='/' to='/home'></Redirect>
       </Switch>
     </Router>
