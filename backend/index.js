@@ -15,6 +15,7 @@ mongoose.connect(process.env.MONGO_URL,  {
 .then(console.log("connected to MongoDB"))
 .catch((err)=> console.log(err));
 
+app.use('/backend/posts', postRoute)
 
 app.listen(process.env.PORT || 5000, ()=> {
     console.log(`listening on port ${process.env.PORT || 5000}`)
