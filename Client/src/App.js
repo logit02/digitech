@@ -1,14 +1,15 @@
 import './App.css';
 //Components
-import Navigator from './Components/Navigator/nav'
-import Land from './Components/Landing_page/land'
-import News from './Components/News/news'
-import Question from './Components/Questions/question'
-import Socials from './Components/Socials/socials'
-import Contact from './Components/Contact/contact'
-import Collabs from './Components/Collabs/collabs'
-import Footer from './Components/Footer/footer'
-import Signin from './Components/Signin/signin'
+import Navigator from './Pages/Home/Navigator/nav'
+import Land from './Pages/Home/Landing_page/land'
+import News from './Pages/Home/News/news'
+import Question from './Pages/Home/Questions/question'
+import Socials from './Pages/Home/Socials/socials'
+import Contact from './Pages/Home/Contact/contact'
+import Collabs from './Pages/Home/Collabs/collabs'
+import Footer from './Pages/Home/Footer/footer'
+import Signin from './Pages/Signin/signin'
+import Job from './Pages/Job/job'
 
 //= imports from react
 import {useState, useContext, useLocation} from 'react'
@@ -52,6 +53,7 @@ function App() {
         </Route>
         <Route path='/job'>
               <Navigator />
+              <Job />
         </Route>
         <Route path='/signin'>
               <Signin />

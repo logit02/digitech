@@ -1,0 +1,34 @@
+.land { 
+    max-width: 100%;
+    height: fit-content;
+    background-image: url('../../../Assets/Images/lander.png');
+    background-size:cover;
+    background-repeat: no-repeat;  
+    padding-bottom: 40px; 
+}
+.texts { 
+   
+    padding-left: 10vh;
+    padding-top: 7vw;
+}
+.title-jobs {
+   width: 70vw;
+    font-size: 54px;
+    color: white;
+}
+#join-buttons {
+    display: flex;
+    flex-direction: row;
+    padding-top: 40px;
+}
+#join-buttons > button{ 
+    
+    margin-right: 10px;
+    width: 130px;
+    height: 35px;
+    background-color: #482BE7;
+    border-radius: 30px;
+    color: white;
+    border:solid 2px transparent;
+    
+}
