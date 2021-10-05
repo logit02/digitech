@@ -7,6 +7,7 @@ app.use(express.json());
 
 //Routes
 const postRoute = require('./routes/posts')
+const NewsRoute = require('./routes/news')
 
 mongoose.connect(process.env.MONGO_URL,  { 
     useNewUrlParser: true,
@@ -15,7 +16,9 @@ mongoose.connect(process.env.MONGO_URL,  {
 .then(console.log("connected to MongoDB"))
 .catch((err)=> console.log(err));
 
+//use routes
 app.use('/backend/posts', postRoute)
+app.use('/backend/news', NewsRoute)
 
 app.listen(process.env.PORT || 5000, ()=> {
     console.log(`listening on port ${process.env.PORT || 5000}`)
