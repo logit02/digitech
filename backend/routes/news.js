@@ -27,5 +27,13 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 })
+router.get("/:id", async(req,res) =>{
+    try{
+        const news = await News.findById(req.params.id);
+        res.status(200).json(news);
+    }catch(err){
+        res.status(500).json(err)
+    }
+})
 
 module.exports = router

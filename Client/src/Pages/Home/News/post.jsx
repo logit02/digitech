@@ -1,6 +1,5 @@
 import "./post.css";
-
-
+import {Link} from 'react-router-dom'
 
   export default function Post( {newss} ) {
     return (
@@ -13,9 +12,9 @@ import "./post.css";
         
         <div className="postInfo">
           <div className="post-link">
-             <span className="postTitle"> 
+             <Link className="postTitle"> 
            {newss.title}
-              </span>
+              </Link>
             </div>
           
           

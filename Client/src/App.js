@@ -2,7 +2,7 @@ import './App.css';
 //Components
 import Navigator from './Pages/Home/Navigator/nav'
 import Land from './Pages/Home/Landing_page/land'
-import News from './Pages/Home/News/news'
+import News from "./Pages/Home/News/news"
 import Question from './Pages/Home/Questions/question'
 import Socials from './Pages/Home/Socials/socials'
 import Contact from './Pages/Home/Contact/contact'
@@ -10,7 +10,8 @@ import Collabs from './Pages/Home/Collabs/collabs'
 import Footer from './Pages/Home/Footer/footer'
 import Signin from './Pages/Signin/signin'
 import Job from './Pages/Job/job'
-
+import FullNews from './Pages/Home/News/FullNews'
+import Single from './Pages/Home/News/single'
 
 //= imports from react
 import {useState, useEffect} from 'react'
@@ -60,7 +61,11 @@ function App() {
         </Route>
         <Route path='/news'>
               <Navigator />
-          <News news={news} />
+              <FullNews news={news} />
+        </Route>
+        <Route path='/news:id'>
+              <Navigator />
+              <Single />
         </Route>
         <Route path='/job'>
               <Navigator />
@@ -71,6 +76,7 @@ function App() {
               <Signin />
         </Route>
         
+       
        
         <Redirect from ='/' to='/home'></Redirect>
       </Switch>

@@ -36,9 +36,6 @@ export default function Work ({jobs}){
        
 
         }
-
-       
-    
   
     return (
     <div id='work'>
