@@ -1,5 +1,4 @@
 import './land.css'
-import vector from '../../../Assets/Images/vector.jpg'
 export default function Land(){
     return(
     <div className='land-all'>

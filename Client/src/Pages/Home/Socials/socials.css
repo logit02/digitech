@@ -1,5 +1,7 @@
 .socials-all { 
-    height: 15vh;
+    height: fit-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #2F1893;
     display: flex;
     flex-direction: row;
@@ -7,10 +9,12 @@
     align-items: center;
 }
 .socials-all >p { 
+    padding-bottom: 10px;
     color: white;
     margin-left: 150px;
     font-size: 20px;
-    font-weight: 600;
+    font-family: 'Poppins-light';
+    font-weight: 700;
 
 }
 .button-socials { 
@@ -25,12 +29,14 @@
     border:solid 1px #4267B2;
     margin-right: 20px;
     font-size: 15px;
+    font-family: 'Poppins-light';
+    font-weight: 700;
     
 }
 
 @media screen  and (max-width: 970px){
     .socials-all { 
-        height: 15vh;
+       
         background-color: #2F1893;
         display: flex;
         flex-direction: column;

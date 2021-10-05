@@ -1,6 +1,45 @@
 import './work.css'
 import Vacant from './Vacant'
-export default function Work (){ 
+import {useState} from 'react'
+
+export default function Work ({jobs}){ 
+    
+    const [jobtitle, setjobtitle] = useState(
+        {
+            "Software Developer":false,
+            "DevOps":false,
+            "Backend Developer":false,
+            "QA Engineer":false,
+            "Front-end Developer":false,
+            "React Developer":false,
+            "Java Engineer":false,
+            "designer":false
+        }
+    )
+
+    const handleCheck = e => {
+        const {name} = e.target;
+        if(jobtitle[name]===false){
+            setjobtitle(prevState =>(
+                {
+                ...prevState,
+                [name]:true    
+                }));
+            
+        }else{
+            setjobtitle(prevState =>(
+                {
+                ...prevState,
+                [name]:false    
+                }));
+        }
+       
+
+        }
+
+       
+    
+  
     return (
     <div id='work'>
         <div id ='sidebar'>
@@ -20,14 +59,14 @@ export default function Work (){
                 </div>
                 <div id='cat'>
                     <p className='check_title'>Job titles</p>
-                    <div><input type='checkbox' name='Software Developer'/> Software Developer</div>
-                    <div><input type='checkbox'  name='DevOps'/> DevOps</div>
-                   <div><input type='checkbox'  name='Backend Developer'/> Backend Developer</div>
-                    <div><input type='checkbox'  name='QA Engineer'/> QA Engineer</div>
-                   <div><input type='checkbox'  name='Front-end Developer'/> Front-end Developer</div>
-                   <div><input type='checkbox'  name='React Developer'/> React Developer</div>
-                    <div><input type='checkbox'  name='Java Engineer'/> Java Engineer</div>
-                    <div><input type='checkbox' name='UI-UX designer' /> UI-UX designer</div>  
+                    <div><input type='checkbox' name='Software Developer' onChange={handleCheck}/> Software Developer</div>
+                    <div><input type='checkbox'  name='DevOps' onChange={handleCheck}/> DevOps</div>
+                   <div><input type='checkbox'  name='Backend Developer' onChange={handleCheck}/> Backend Developer</div>
+                    <div><input type='checkbox'  name='QA Engineer' onChange={handleCheck}/> QA Engineer</div>
+                   <div><input type='checkbox'  name='Front-end Developer' onChange={handleCheck}/> Front-end Developer</div>
+                   <div><input type='checkbox'  name='React Developer' onChange={handleCheck}/> React Developer</div>
+                    <div><input type='checkbox'  name='Java Engineer' onChange={handleCheck}/> Java Engineer</div>
+                    <div><input type='checkbox' name='designer' onChange={handleCheck}/> designer</div>  
                     <button id='filter'>Filter</button>
                 </div>
                 
@@ -36,24 +75,14 @@ export default function Work (){
         </div>
         <div id='main'>
             <div id='main_work'>
-                {/* {jobs.map((j) =>(
+                 {jobs.map((j) =>(
                 <Vacant job ={j} />
-            ))}*/}
+            ))}
 
-            <Vacant />
-            <Vacant />
-            <Vacant />
-            <Vacant />
-            <Vacant />
-            <Vacant />
-            <Vacant />
-            <Vacant />
-            <Vacant />
-            <Vacant />
-            <Vacant />
-            <Vacant />
+            
             </div>
         </div>
     </div>
     )
 }
+

@@ -9,9 +9,7 @@
     align-items: center;
     border-radius: 7px;
 }
-#image_part {
-    width: 10%;
-}
+
 #logo {
     height: 50px;
     width:50px;
@@ -23,11 +21,16 @@
     flex-direction: column;
 }
 #job_name { 
+    font-family: 'Poppins-light';
+    font-weight: 700;
     color:#2F1893;
-    font-size: 18px;
+    font-size: 16px;
 }
 #company_name {
-    font-size: 15px;
+    padding-top: 5px;
+    font-size: 12px;
+    font-family: 'Poppins-light';
+    font-weight: 700;
 }
 #detail_part {
     display: flex;
@@ -42,6 +45,9 @@
 #detail_part >div >p { 
     padding-top: 10px;
     margin-left: 10px;
+    font-family: 'Poppins-light';
+    font-weight: 700;
+    font-size: 13px;
 }
 #calendar, #location {
     height:24px;
@@ -55,6 +61,8 @@
     border:solid 2px transparent;
     background-color: #2F1893;
     color: white;
+    font-family: 'Poppins-light';
+   font-size: 11px;
 }
 
 #vacant:hover{

@@ -22,6 +22,7 @@ router.get('/', async (req, res) => {
     try {
         let news;
         news = await News.find();
+        res.status(200).json(news);
     }catch(err){ 
         res.status(500).json(err);
     }

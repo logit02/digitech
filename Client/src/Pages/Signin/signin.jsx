@@ -9,7 +9,7 @@ export default function Signin(){
     const [error,setError] = useState("");
     const usernameRef = useRef();
     const passwordRef = useRef();
-    const { dispatch, isFetching} = useContext(Context)
+    const { dispatch} = useContext(Context)
 
 
     const userfocusHandle =() => {

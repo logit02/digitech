@@ -13,8 +13,10 @@
 }
 .title-jobs {
    width: 70vw;
-    font-size: 54px;
+    font-size: 45px;
     color: white;
+    font-family: 'Poppins-medium';
+    font-weight: 700;
 }
 #join-buttons {
     display: flex;
@@ -24,11 +26,14 @@
 #join-buttons > button{ 
     
     margin-right: 10px;
-    width: 130px;
-    height: 35px;
+    width: 150px;
+    height: 40px;
     background-color: #482BE7;
     border-radius: 30px;
     color: white;
     border:solid 2px transparent;
+    font-family: 'Poppins-light';
+    font-weight: 700;
+    font-size: 12px;
     
 }

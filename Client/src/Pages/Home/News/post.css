@@ -64,28 +64,7 @@
         margin-bottom: 20px;
         
       }
-      @media screen  and (max-width: 770px){
-
-        .post {
-            width: 60vw;
-            display: flex;
-            flex-direction: column;
-            background-color: white;
-            border-radius: 7px;
-            align-items: center;  
-          }
-          .postImg {
-            width: 60vw;
-            padding-bottom: 20px;
-            object-fit: cover;
-            border-radius: 7px;
-          }
-          .postDesc{
-            margin-left: 0;
-            margin-right: 0;  
-          }
-
-      }
+    
       @media screen  and (max-width: 970px) and (min-width: 770px){
         .post {
             width: 40vw;
@@ -108,4 +87,42 @@
             margin-right: 0;  
           }
 
+      }
+
+      @media screen  and (max-width: 450px){
+        .post {
+          width: 80vw;
+          margin: 0px 25px 50px 25px;
+          flex-direction: row;
+          height: 20vw;
+          
+        }
+        .postImg {
+          object-fit: cover;
+          border-radius: 7px;
+          height: 100%;
+          width: 20vw;
+          padding-bottom: 0;
+        }
+        .postTitle {
+          font-family: Poppins-medium;
+          font-size: 14px;
+          font-weight: 900;
+          margin-top: 10px;
+          cursor: pointer;
+          color:#2F1893;
+        
+        }
+        .postDate {
+         display: none;
+        }
+        .postDesc{
+
+          margin-left: 5px;
+          font-size: 12px;
+          margin-bottom: 20px;
+          margin-right: 10px;
+          
+        }
+        
       }

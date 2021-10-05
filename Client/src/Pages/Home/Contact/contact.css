@@ -1,5 +1,5 @@
 .contact-all{ 
-    height: 98vh;
+    height: fit-content;
     background-color: white;
     display: flex;
     flex-direction: row;
@@ -8,13 +8,16 @@
 .title-contact{ 
     color:#1E0E62;
     font-size: 27px;
-    font-weight: 600;
+    font-family: 'Poppins-medium';
+    font-weight: 700;
 }
 .desc-contact{ 
     padding-top: 3vw;
     color:#151439;
     opacity: 0.4;
-    font-size: 18px;
+    font-size: 16px;
+    font-family: 'Poppins-light';
+    font-weight: 700;
 
 }
 .text-part-contact{ 
@@ -39,6 +42,8 @@
     padding: 3px 3px 3px 7px;
     border-radius: 30px;
     padding-left: 14px;
+    font-family: 'Poppins-light';
+    font-weight: 700;
 }
 .button-contact:focus, .button-contact-message:focus {
     outline: none;
@@ -61,6 +66,8 @@
     margin-top: 30px;
     font-size: 13px;
     font-weight: 600;
+    font-family: 'Poppins-light';
+    font-weight: 700;
 }
 
 .big-logo{ 
@@ -85,6 +92,14 @@
     }
     .big-logo{ 
         display: none;
+    }
+}
+@media screen  and (max-width: 450px){
+    .buttons-contact{
+        flex-direction: column;
+    }
+    .button-contact, .button-contact-message{
+        width: 50vw;
     }
 }
 

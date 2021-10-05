@@ -11,9 +11,12 @@ import Footer from './Pages/Home/Footer/footer'
 import Signin from './Pages/Signin/signin'
 import Job from './Pages/Job/job'
 
+
 //= imports from react
-import {useState, useContext, useLocation} from 'react'
+import {useState, useEffect} from 'react'
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
+import axios from 'axios';
+
 
 //context
 //import {Context} from '../src/Components/context/Context'
@@ -22,11 +25,19 @@ import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom
 //function main 
 
 function App() {
-  /*const {user} = useContext(Context)*/
-  const [posts, setPosts] = useState([])
- /* const {search} = useLocation();*/
-
   
+  const [news, setNews] = useState([])
+  
+
+ useEffect(() => {
+  const fetchNews = async () => {
+      const res = await axios.get('http://localhost:5000/news/' )
+      setNews(res.data.slice(0,3))
+      console.log(res.data)
+  } 
+  fetchNews();
+},[])
+
 
   return (
     <Router>
@@ -36,7 +47,7 @@ function App() {
               <Navigator />
               <Land />
 
-              <News />
+              <News news={news}/>
               <Question />
               <Socials />
               <Contact />
@@ -49,15 +60,17 @@ function App() {
         </Route>
         <Route path='/news'>
               <Navigator />
-          <   News />
+          <News news={news} />
         </Route>
         <Route path='/job'>
               <Navigator />
               <Job />
         </Route>
+        å
         <Route path='/signin'>
               <Signin />
         </Route>
+        
        
         <Redirect from ='/' to='/home'></Redirect>
       </Switch>
