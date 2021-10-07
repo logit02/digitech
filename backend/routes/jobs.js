@@ -24,5 +24,14 @@ router.post('/', async (req,res)=> {
         res.status(500).json(err);
     }
 })
+//
+router.get("/:id", async(req,res) =>{
+    try{
+        const onejob = await Job.findById(req.params.id);
+        res.status(200).json(onejob);
+    }catch(err){
+        res.status(500).json(err)
+    }
+})
 
 module.exports = router

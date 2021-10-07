@@ -3,6 +3,24 @@ const User = require('../models/User')
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 router.use(cors());
+const jwt = require('jsonwebtoken')
+
+
+const verify = (req,res,next) => {
+    const authHeader = req.headers.authorization;
+    if(authHeader) {
+        const token = authHeader.split(' ')[1]
+        jwt.verify(token, "mySecretKey", (err, payload) => {
+            if(err){
+                return res.status(403).json("token is invalid")
+            }
+            req.payload = payload; 
+            next()
+        })
+    }else{ 
+        res.status(401),json("you are not authenticated")
+    }
+}
 
 // register
 
@@ -35,10 +53,41 @@ router.post('/login', async (req, res ) => {
     const validated = await bcrypt.compare(req.body.password, user.password);
     !validated && res.status(400).json("Wrong creditentials");
     const { password, ...others} = user._doc;
-    res.status(200).json(others)
+   if(others){
+       //generate access toekn
+       const accessToken = jwt.sign({
+           id:others._id}, 
+           "mySecretKey", 
+           {expiresIn:"15m"})
+       res.status(200).json({
+        username:others.username,
+        email:others.email,
+        accessToken,
+    })
+   }
+
     }catch(err){
         res.status(500).json(err);
     }
 })
+
+router.get('/', async (req,res) => {
+    try{ 
+        let users;
+        users=await User.find();
+        res.status(200).json(users)
+    }catch(err){ 
+        res.status(500).json(err);
+    }
+})
+
+router.delete("/:id", verify, (req,res) =>{ 
+  if(req.payload.id === req.params.id){
+        res.status(200).json("user deleted!")
+  }else{ 
+      res.status(403).json("you are not allowed to do that action")
+  }
+})
+
 
 module.exports = router

@@ -8,7 +8,9 @@ router.post('/', async (req,res)=> {
     const post = new Post(req.body);
     try{ 
       const savedPost =await post.save();
-      res.status(200).json(savedPost);
+      res.status(200).json({
+          status:"successfully posted!"
+      });
     }catch(err){ 
         res.status(500).json(err);
     }
