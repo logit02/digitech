@@ -6,7 +6,7 @@ dotenv.config();
 app.use(express.json());
 const jwt = require("jsonwebtoken")
 const path = require('path')
-
+//from ines komp
 //Routes
 const postRoute = require('./routes/posts')
 const NewsRoute = require('./routes/news')
